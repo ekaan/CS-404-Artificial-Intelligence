@@ -1,0 +1,187 @@
+net
+{
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@67e2e4d8";
+	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@29986373";
+	jenginegenerator6060830225489488864L = "edu.ucla.belief.inference.JoinTreeSettings@1fdde949";
+	node_size = (130.0 55.0);
+}
+
+node variable9
+{
+	states = ("okay" "faulty" );
+	position = (626 -260);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable9";
+	label = "AirSystem";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable3
+{
+	states = ("strong" "weak" "dead" );
+	position = (259 -136);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable3";
+	label = "Battery Voltage";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable2
+{
+	states = ("Strong" "Weak" "None" );
+	position = (189 -263);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable2";
+	label = "VoltageAtPlug";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable4
+{
+	states = ("new" "partlyUsed" "used" );
+	position = (183 -31);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable4";
+	label = "BatteryAge";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable7
+{
+	states = ("okay" "faulty" );
+	position = (483 -261);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable7";
+	label = "FuelSystem";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable6
+{
+	states = ("true" "false" );
+	position = (409 -367);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable6";
+	label = "CarStarts";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable5
+{
+	states = ("okay" "faulty" );
+	position = (335 -262);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable5";
+	label = "StarterSystem";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable8
+{
+	states = ("okay" "faulty" );
+	position = (327 -29);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable8";
+	label = "ChargingSystem";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node variable1
+{
+	states = ("Blown" "Okay" );
+	position = (120 -135);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable1";
+	label = "MainFuse";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+potential ( variable9 | )
+{
+	data = (	0.85	0.15	);
+}
+potential ( variable3 | variable4 variable8 )
+{
+	data = (((	0.8	0.15	0.05	)
+		(	0.7000000000000001	0.20000000000000004	0.10000000000000002	))
+		((	0.6000000000000001	0.30000000000000004	0.10000000000000002	)
+		(	0.45	0.35	0.2	))
+		((	0.4	0.4	0.2	)
+		(	0.3	0.5	0.2	)));
+}
+potential ( variable2 | variable1 variable3 )
+{
+	data = (((	0.3	0.5	0.2	)
+		(	0.2	0.35	0.45	)
+		(	0.1	0.2	0.7	))
+		((	0.9	0.07	0.03	)
+		(	0.85	0.1	0.05	)
+		(	0.2	0.4	0.4	)));
+}
+potential ( variable4 | )
+{
+	data = (	0.4	0.3	0.3	);
+}
+potential ( variable7 | )
+{
+	data = (	0.85	0.15	);
+}
+potential ( variable6 | variable2 variable5 variable7 variable9 )
+{
+	data = (((((	0.99	0.01	)
+		(	0.9	0.1	))
+		((	0.7	0.3	)
+		(	0.5	0.5	)))
+		(((	0.6	0.4	)
+		(	0.55	0.45	))
+		((	0.3	0.7	)
+		(	0.1	0.9	))))
+		((((	0.9	0.1	)
+		(	0.85	0.15	))
+		((	0.5	0.5	)
+		(	0.2	0.8	)))
+		(((	0.4	0.6	)
+		(	0.3	0.7	))
+		((	0.15	0.85	)
+		(	0.05	0.95	))))
+		((((	0.2	0.8	)
+		(	0.15	0.85	))
+		((	0.05	0.95	)
+		(	0.03	0.97	)))
+		(((	0.05	0.95	)
+		(	0.02	0.98	))
+		((	0.01	0.99	)
+		(	0.005	0.995	)))));
+}
+potential ( variable5 | variable3 )
+{
+	data = ((	0.95	0.05	)
+		(	0.7	0.3	)
+		(	0.3	0.7	));
+}
+potential ( variable8 | )
+{
+	data = (	0.7	0.3	);
+}
+potential ( variable1 | )
+{
+	data = (	0.05	0.95	);
+}
