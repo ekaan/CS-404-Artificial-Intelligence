@@ -1,5 +1,5 @@
 # CS-404-Artificial-Intelligence
-Sabanci University CS 404 - Projects
+Sabanci University CS 404 - Homeworks
 
 Topics Consist of:
 
