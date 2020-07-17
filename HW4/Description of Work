@@ -1,0 +1,4 @@
+Generating a domain and problem file using the PDLL planning language in order to solve Fox, Goose, Plant Game
+
+- Each domain needs to be specified seperately
+- Conditions need to be satisfied to be able to solve the given problem
